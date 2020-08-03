@@ -1,0 +1,19 @@
+
+<div class="main-container">
+    <div class="container">
+        <div class="frame">
+            <div class="map_box">
+                <img src="/assets/img/map.png" alt="map">
+                <img class="img_1 ab-img" src="/assets/img/p3.png">
+                <img class="img_2 ab-img" src="/assets/img/p2.png">
+                <img class="img_3 ab-img" src="/assets/img/p1.png" alt="">
+                <img class="img_4 ab-img" src="/assets/img/p4.png">
+                <div class="number_box">{{(countUsers$ | async).userCount}} </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ul *ngFor ="let data of (fetchUsers$ | async)">
+    <li>{{data.name}}</li>
+</ul>
+<!-- {{(fetchUsers$ | async) }} -->

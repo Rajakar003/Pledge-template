@@ -1,0 +1,73 @@
+.d-none{
+    display: none;
+}
+.is-invalid{
+    border: 2px solid red;
+}
+.main{
+    width: 100%;
+    float: left;
+    background-image: url(/assets/img/pledge_back.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: fixed;
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.form_frame{
+ width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 100vh;
+}
+form{
+    width: 480px;
+    float: left;
+    margin: 0 auto;  
+    // border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 40px 30px;
+    min-height: 400px;
+    h2{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+.form_row{
+    width: 100%;
+    float: left;
+}
+input{
+    width: 100%;
+    padding: 5px 10px;
+    height: 50px;
+    outline: none;
+    background-color: #dbcdcf;
+    border: none;
+}
+form .form_row + .form_row{
+    margin-top: 40px;
+}
+.btn_wrap{
+    text-align: center;
+    button{
+        width: 210px;
+        height: 50px;
+        // background-color: #e47064;
+        background: linear-gradient(#e47064, #e47064, #e47064) content-box, linear-gradient(-80deg, #c56157, #c56157, #c56157) 0/37% 100% border-box;
+        border: solid 5px transparent;
+        box-shadow: inset 0 0 0.125em rgba(255, 255, 255, 0);
+        color: #fff;
+        font-size: 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        &.disabled{
+            cursor: default;
+        }
+    }
+}

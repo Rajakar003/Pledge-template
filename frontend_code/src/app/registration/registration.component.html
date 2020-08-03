@@ -1,0 +1,38 @@
+<div class="main">
+    <div class="container">
+        <div class="form_frame">
+            <form #userForm="ngForm">
+                <!-- <h2>Register the Form</h2> -->
+                <div class="form_row">
+                    <!-- <label>Full Name*</label> -->
+                    <input type="name" id="name" #name="ngModel" name="name" placeholder="Enter Name" [class.is-invalid]="name.invalid" class="form-control" [(ngModel)]="userModel.name">
+                    <!-- <small [class.d-none]="name.valid || name.untouched">Name is required</small> -->
+                </div>
+                <div class="form_row">
+                    <!-- <label>Email*</label> -->
+                    <input type="email" required id="email" #email="ngModel" name="email" placeholder="Enter Email" [class.is-invalid]="email.invalid" class="form-control" [(ngModel)]="userModel.email">
+                    <!-- <small [class.d-none]="email.valid || email.untouched">Email is required</small> -->
+                </div>
+                <div class="form_row">
+                    <!-- <label>Mobile*</label> -->
+                    <input type="tel" id="mobile" #mobile="ngModel" name="Mobile" placeholder="Enter Mobile" [class.is-invalid]="mobile.invalid" class="form-control" [(ngModel)]="userModel.mobile">
+                    <!-- <small [class.d-none]="mobile.valid || mobile.untouched">Mobile is required</small> -->
+                </div>
+                <div class="form_row btn_wrap">
+                        <!-- <button type="submit"  class="btn btn-submit"><a (click)="navigate('/camera')">SUBMIT</a></button> -->
+                        <button type="submit"  class="btn btn-submit" [class.disabled]="userForm.invalid" [disabled]='userForm.invalid' (click)="submit(userForm)">SUBMIT / जमा करें</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- <form #userlogin = "ngForm" (ngSubmit) = "submit(userlogin)" >
+    <input type = "text" name = "email" placeholder = "emailid" ngModel>
+    <br/>
+    <input type = "text" name = "Mobile" placeholder = "mobile" ngModel>
+    <br/>
+    <input type = "text" name = "name" placeholder = "name" ngModel>
+    <br/>
+    <input type = "submit" value = "submit">
+ </form> -->

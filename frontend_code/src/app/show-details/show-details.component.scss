@@ -1,0 +1,118 @@
+.show_frame{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // min-height: 100vh;
+    padding-top: 40px;
+    flex-direction: column;
+    .pledge_btn{
+        width: auto;
+        height: 50px;
+        background: linear-gradient(#e47064, #e47064, #e47064) content-box, linear-gradient(-80deg, #c56157, #c56157, #c56157) 0/37% 100% border-box;
+        border: solid 5px transparent;
+        box-shadow: inset 0 0 0.125em rgba(255, 255, 255, 0);
+        color: #fff;
+        font-size: 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 40px;
+        a{
+            color: #fff;
+            text-decoration: none;
+            padding: 0px 20px;
+        }
+    }
+    .details_page{
+        width: 80%;
+        min-height: 400px;
+        background-color: #fff;
+        padding: 20px;
+        background-image: url(/assets/img/Pledge_Wall_BG.png);
+        background-position: left top;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        .details_head{
+            width: 100%;
+            float: left;
+            text-align: center;
+            margin-bottom: 40px;
+            img{
+                width: 150px;
+            }
+        }
+        .details_block{
+            display: flex;
+            width: 100%;
+            .text_details{
+                width: 35%;
+                h3{
+                    text-align: center;
+                    text-decoration: underline;
+                    margin-bottom: 20px;
+                }
+                P{
+                    &+ p{
+                        margin-top: 20px;
+                    }
+                }
+            }
+            .pro_sec{
+                width: 30%;
+                padding: 0px 20px;
+                .pro_photo{
+                    width: 100%;
+                    float: left;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .pro_wrap{
+                        width: 100%;
+                        float: left;
+                        text-align: center;
+                        justify-content: center;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        .pro_img {
+                            width: 70%;
+                            height: 200px;
+                            // border: 2px solid #000;
+                            margin: 20px 0px;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// Canvas Signature
+
+.signaturepad_frame{
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+}
+.m-signature-pad{
+    width: 100%;
+    height: 80px;
+}
+.m-signature-pad-body{
+    width: 100%;
+    height: 100%;
+}
+.m-signature-pad-body{
+    signature-pad{
+        width: 100%;
+        height: 80px;
+        border: 1px solid #333;
+        float: left;
+    }
+}

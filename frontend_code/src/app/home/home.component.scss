@@ -1,0 +1,81 @@
+.main-container{
+width: 100%;
+float: left;
+background-color: #deded9;
+background-image: url(/assets/img/bos-shadow1.png);
+background-position: center;
+/* background-size: 100%; */
+background-repeat: no-repeat;
+height: 100vh;
+display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.frame{
+    width: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.map_box{
+    position: relative;
+}
+.ab-img{
+    position: absolute;
+}
+.img_1.ab-img {
+    left: -2%;
+    bottom: 28%;
+    transform: translate(-50%, -50%);
+}
+.img_2.ab-img {
+    left: 0px;
+    bottom: 66px;
+}
+.img_3.ab-img{
+    right: 20%;
+    bottom: 6%;
+    transform: translate(-50%, -50%);
+}
+.img_4.ab-img{
+    left: 45%;
+    top: 50%;
+    //transform: translate(-50%, -50%);
+    /* transition-property: top, left, border-radius, background-color;
+    transition-duration: 2s, 1s, 0.5s, 0.5s;
+    transition-delay: 0s, 0.5s, 1s, 1.5s; */
+    transition: 1s ease-in-out;
+}
+.number_box {
+    width: 106px;
+    height: 30px;
+    position: absolute;
+    font-size: 30px;
+    font-weight: 700;
+    color: #464545;
+    border: 1px solid #464545;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 23px;
+    right: 32px;
+    background-color: #ebebeb;
+}
+.slow{
+   
+    top: 20% !important;
+    left: 8% !important;
+   transition: transform 300ms linear;
+    } 
+.small{
+     transform: scale(0.2);
+transition: transform 300ms linear;
+}

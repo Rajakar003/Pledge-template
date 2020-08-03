@@ -1,0 +1,70 @@
+<div class="main">
+    <div class="container">
+        <div class="show_frame">
+            <div class="details_page">
+                <div class="details_head"><img src="/assets/img/rsk_logo.png" alt="title_img"></div>
+                <div class="details_block">
+                    <div class="text_details">
+                        <h3>The Swachh Bharat Pledge</h3>
+                        <p>Mahatma Gandhi dreamt of a Swachh India. With the Swachh Bharat Mission, the country took a strong step in this direction. It is my duty to take this progress forward by keeping my surroundings clean</p>
+                        <p>I pledge that I will use a toilet and ensure all members of my family do the same I will wash my hands with soap multiple times a day and observe good hygienic practices<br>
+                            I will not spit in public<br>
+                            I will not litter my surroundings
+                            </p>
+                            <p>I will share the message of Swachhata with my community, my village or city and encourage others around me to follow these Swachh practices as well</p>
+                            <p>I will also undertake shramdaan for swachhata at least two hours a week</p>
+                    </div>
+                    <div class="pro_sec">
+                        <div class="pro_photo" *ngFor ="let data of (fetchUsers$ | async); index as i; last as isLast">
+                            <div class="pro_wrap" *ngIf="isLast">
+                            <p>{{data.name}}</p>
+                            <div class="pro_img">
+                                <img [src]='data.photo'>
+                            </div>
+                            <p>मैं हूँ स्वच्छाग्राही</p>
+                            <p>I am a Swachhagrahi</p>
+                            </div>
+                        </div>
+                        <div class="signaturepad_frame">
+                            <div id="signature-pad" class="m-signature-pad">
+                               <div class="m-signature-pad-body">
+                                  <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+                               </div>
+                            </div>
+                            <!-- <div class="btn_fld">
+                               <button>Save</button>
+                               <button type="reset" (click)='drawClear()'>Clear</button>
+                            </div> -->
+                         </div>
+                    </div>
+                    <div class="text_details">
+                        <h3>थे स्वच्छ भारत प्लेड्ज</h3>
+                        <p>महात्मा गाँधी ड्रेम्ट ऑफ आ स्वच्छ इंडिया. वित थे स्वच्छ भारत मिशन, थे कंट्री टुक आ स्ट्रॉंग स्टेप इन तीस डाइरेक्षन. इट इस मी ड्यूटी तो टके तीस प्रोग्रेस फॉर्वर्ड बाइ कीपिंग मी सराउंडिंग्स क्लीन
+                        </p>
+                        <p>
+                            ई प्लेड्ज तट ई विल उसे आ टाय्लेट आंड एन्षूर ऑल मेंबर्ज़ ऑफ मी फॅमिली दो थे सेम ई विल वॉश मी हॅंड्ज़ वित सोप मल्टिपल टाइम्स आ दे आंड अब्ज़र्व गुड हाइगियेनिक प्रॅक्टिसस<br>
+                            ई विल नोट स्पिट इन पब्लिक<br>
+                            ई विल नोट लिट्टर मी सराउंडिंग्स
+
+                        </p>
+                        <p>ई विल शेर थे मेसेज ऑफ स्वच्छता वित मी कम्यूनिटी, मी विलेज ओर सिटी आंड एनकरेज अदर्स अराउंड मे तो फॉलो दीज़ स्वच्छ प्रॅक्टिसस आस वेल
+                        </p>
+                        <p>ई विल ऑल्सो अंडरटेक श्रमदान फॉर स्वच्छता अट लीस्ट टू अवर्स आ वीक</p>
+                    </div>
+                </div>
+            </div>
+            <button class="pledge_btn"><a routerLink="/home">PLEASE SIGN ON THE SCREEN/कृप्या स्क्रीन पर हसताक्षर करे</a></button>
+        </div>
+    </div>
+    <!-- <ul *ngFor ="let data of (fetchUsers$ | async); index as i; last as isLast">
+        
+        <li *ngIf="isLast">
+            <p>{{data.name}}</p>
+            <p><img [src]='data.photo'></p>
+        </li>
+    </ul> -->
+    <!-- <li *ngFor="let user of (fetchUsers$ | async); index as i; last as isLast">
+        <span *ngIf="isLast">{{user.name}}</span>
+      </li> -->
+
+  </div>  
