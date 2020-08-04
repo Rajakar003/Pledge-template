@@ -49,6 +49,7 @@ display: flex;
     left: -190px;
     top: -10%;
     z-index: 9;
+    transform: scale(0.0);
     //transform: translate(-50%, -50%);
     /* transition-property: top, left, border-radius, background-color;
     transition-duration: 2s, 1s, 0.5s, 0.5s;
@@ -78,7 +79,7 @@ display: flex;
    transition: transform 300ms linear;
     } 
 .small{
-     transform: scale(0.2);
+     transform: scale(0.4) !important;
 transition: transform 300ms linear;
 }
 .plage_taken{
@@ -108,29 +109,34 @@ transition: transform 300ms linear;
        align-items: center;
        justify-content: center;
        img{
-           &:nth-child(1){
-               width: 80%;
-           }
+        //    &:nth-child(1){
+        //        width: 80%;
+        //    }
            &.img_1{
-            left: 12%;
+            left: 19%;
             width: 88px;
+            top: 40%;
            }
            &.img_2{
-            left: 121px;
+            left: 20%;
             bottom: 66px;
             width: 88px;
            }
            &.img_3{
-            right: 37%;
+            right: 28%;
             width: 88px;
            }
            &.img_4{
-            left: 0%;
-            top: 15%;
+            left: 15%;
+            top: -6%;
            }
        }
    }
    .number_box{
        height: 50px;
+   }
+   .plage_taken{
+    right: 20%;
+    top: -76px;
    }
 }

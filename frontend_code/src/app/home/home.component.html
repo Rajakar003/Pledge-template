@@ -8,7 +8,7 @@
                 <img class="img_2 ab-img" src="/assets/img/p2.png">
                 <img class="img_3 ab-img" src="/assets/img/p1.png" alt="">
                 <div class="image_show" *ngFor ="let data of (fetchUsers$ | async); index as i; last as isLast">
-                    <img *ngIf="isLast" class="img_4 ab-img small" [src]='data.photo'>
+                    <img *ngIf="isLast" class="img_4 ab-img" [changeClass]="getColorClass()" [src]='data.photo'>
                 </div>
                 <div class="plage_taken">
                     <p>शपथ ली</p>

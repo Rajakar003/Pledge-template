@@ -30,7 +30,10 @@ export class HomeComponent implements OnInit {
     this._fetchCountUsers();
     this._fetchUsers();
   }
-
+  public getColorClass(row: any = ''): string {
+    // Compute the class name
+    return 'small'
+  }
   private _fetchCountUsers() {
     this.countUsers$ = this.myService.fetchCountUsers();
   }

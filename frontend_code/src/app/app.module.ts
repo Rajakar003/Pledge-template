@@ -13,6 +13,7 @@ import { SignaturePadModule } from 'angular2-signaturepad';
 import { ShowDetailsComponent } from './show-details/show-details.component';
 import { CouponCodeComponent } from './coupon-code/coupon-code.component';
 import { CapturePopComponent } from './capture-pop/capture-pop.component';
+import { ChangeClassDirective } from './change-class.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CapturePopComponent } from './capture-pop/capture-pop.component';
     CameraComponent,
     ShowDetailsComponent,
     CouponCodeComponent,
-    CapturePopComponent
+    CapturePopComponent,
+    ChangeClassDirective
   ],
   imports: [
     BrowserModule,
