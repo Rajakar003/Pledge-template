@@ -2,8 +2,9 @@
 width: 100%;
 float: left;
 background-color: #deded9;
-background-image: url(/assets/img/bos-shadow1.png);
-background-position: center;
+background-image: url(/assets/img/pledge_back.jpg);
+background-position: left top;
+background-size: cover;
 /* background-size: 100%; */
 background-repeat: no-repeat;
 height: 100vh;
@@ -45,8 +46,9 @@ display: flex;
     transform: translate(-50%, -50%);
 }
 .img_4.ab-img{
-    left: 45%;
-    top: 50%;
+    left: -190px;
+    top: -10%;
+    z-index: 9;
     //transform: translate(-50%, -50%);
     /* transition-property: top, left, border-radius, background-color;
     transition-duration: 2s, 1s, 0.5s, 0.5s;
@@ -54,9 +56,9 @@ display: flex;
     transition: 1s ease-in-out;
 }
 .number_box {
-    width: 106px;
-    height: 30px;
-    position: absolute;
+    width: 120px;
+    height: 50px;
+    // position: absolute;
     font-size: 30px;
     font-weight: 700;
     color: #464545;
@@ -65,8 +67,8 @@ display: flex;
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 23px;
-    right: 32px;
+    // top: 23px;
+    // right: 32px;
     background-color: #ebebeb;
 }
 .slow{
@@ -78,4 +80,57 @@ display: flex;
 .small{
      transform: scale(0.2);
 transition: transform 300ms linear;
+}
+.plage_taken{
+    float: left;
+    text-align: center;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    p{
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        &.pledge_text{
+            margin-bottom: 5px;
+        }
+    }
+}
+@media screen and (max-width:1366px){
+   .map_box{
+       width: 100%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       img{
+           &:nth-child(1){
+               width: 80%;
+           }
+           &.img_1{
+            left: 12%;
+            width: 88px;
+           }
+           &.img_2{
+            left: 121px;
+            bottom: 66px;
+            width: 88px;
+           }
+           &.img_3{
+            right: 37%;
+            width: 88px;
+           }
+           &.img_4{
+            left: 0%;
+            top: 15%;
+           }
+       }
+   }
+   .number_box{
+       height: 50px;
+   }
 }

@@ -11,6 +11,6 @@
         <div class="cupponCode" *ngFor ="let data of (fetchUsers$ | async); index as i; last as isLast">
             <span *ngIf="isLast">{{data.couponCode}}</span>
         </div>
-        <button class="coupon_btn"><a routerLink="/showDetails">THANK YOU FOR TAKING THE PLEDGE/शपथ लेने के लिए धन्यवाद</a></button>
+        <button class="coupon_btn"><a routerLink="/home">THANK YOU FOR TAKING THE PLEDGE/शपथ लेने के लिए धन्यवाद</a></button>
     </div>
 </div>

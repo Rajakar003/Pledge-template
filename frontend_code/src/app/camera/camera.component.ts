@@ -119,7 +119,7 @@ public triggerSnapshot(): void {
   })
   
 this.trigger.next();
-this.router.navigateByUrl('couponCode');
+this.router.navigateByUrl('capturePop');
 }
 public toggleWebcam(): void {
 this.showWebcam = !this.showWebcam;

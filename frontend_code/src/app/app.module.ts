@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SignaturePadModule } from 'angular2-signaturepad';
 import { ShowDetailsComponent } from './show-details/show-details.component';
 import { CouponCodeComponent } from './coupon-code/coupon-code.component';
+import { CapturePopComponent } from './capture-pop/capture-pop.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CouponCodeComponent } from './coupon-code/coupon-code.component';
     HomeComponent,
     CameraComponent,
     ShowDetailsComponent,
-    CouponCodeComponent
+    CouponCodeComponent,
+    CapturePopComponent
   ],
   imports: [
     BrowserModule,

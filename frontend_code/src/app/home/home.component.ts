@@ -23,6 +23,8 @@ export class HomeComponent implements OnInit {
         $(this).addClass('slow');
       });
       });
+
+      
     })
 
     this._fetchCountUsers();

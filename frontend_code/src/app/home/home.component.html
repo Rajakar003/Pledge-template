@@ -7,12 +7,25 @@
                 <img class="img_1 ab-img" src="/assets/img/p3.png">
                 <img class="img_2 ab-img" src="/assets/img/p2.png">
                 <img class="img_3 ab-img" src="/assets/img/p1.png" alt="">
-                <img class="img_4 ab-img" src="/assets/img/p4.png">
-                <div class="number_box">{{(countUsers$ | async).userCount}} </div>
+                <div class="image_show" *ngFor ="let data of (fetchUsers$ | async); index as i; last as isLast">
+                    <img *ngIf="isLast" class="img_4 ab-img small" [src]='data.photo'>
+                </div>
+                <div class="plage_taken">
+                    <p>शपथ ली</p>
+                    <p class="pledge_text">PLEDGE TAKEN</p>
+                    <div class="number_box">{{(countUsers$ | async).userCount}} </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+    <!-- <ul *ngFor ="let data of (fetchUsers$ | async); index as i; last as isLast">
+        
+        <li *ngIf="isLast">
+            <p>{{data.name}}</p>
+            <p><img [src]='data.photo'></p>
+        </li>
+    </ul> -->
 <ul *ngFor ="let data of (fetchUsers$ | async)">
     <li>{{data.name}}</li>
 </ul>
