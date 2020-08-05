@@ -10,12 +10,12 @@
                 </div>
                 <div class="form_row">
                     <!-- <label>Email*</label> -->
-                    <input type="email" required id="email" #email="ngModel" name="email" placeholder="Enter Email" [class.is-invalid]="email.invalid" class="form-control" [(ngModel)]="userModel.email">
+                    <input type="email" required id="email" #email="ngModel" name="email" placeholder="Enter Email" [class.is-invalid]="email.invalid" class="form-control" [(ngModel)]="userModel.email" email="true">
                     <!-- <small [class.d-none]="email.valid || email.untouched">Email is required</small> -->
                 </div>
                 <div class="form_row">
                     <!-- <label>Mobile*</label> -->
-                    <input type="tel" id="mobile" #mobile="ngModel" name="Mobile" placeholder="Enter Mobile" [class.is-invalid]="mobile.invalid" class="form-control" [(ngModel)]="userModel.mobile">
+                    <input type="tel" id="mobile" #mobile="ngModel" name="Mobile" placeholder="Enter Mobile" [class.is-invalid]="mobile.invalid" class="form-control" [(ngModel)]="userModel.mobile" OnlyNumber="true" (keypress)="numberOnly($event)">
                     <!-- <small [class.d-none]="mobile.valid || mobile.untouched">Mobile is required</small> -->
                 </div>
                 <div class="form_row btn_wrap">

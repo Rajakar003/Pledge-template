@@ -244,5 +244,28 @@ module.exports = {
     })
   },
 
+  signaturestring: (req, res, db, MongoClient) => {
+    db.collection('Client_detail').updateMany({ _id: new MongoClient.ObjectID(req.body._id) },
+      {
+        $set: {
+          "signature": req.body.sign  
+        }
+      }, {
+      multi: true
+    })
+    res.send(JSON.stringify("your signature is updated"))
+
+  },
+
+  fetchsignaturestring: (req, res, db, MongoClient) => {
+    db.collection('Client_detail').find({ _id: new MongoClient.ObjectID(req.body._id) }).toArray((err, result) => {
+      if (err) {
+        res.end();
+        throw err;
+      }
+      res.send(JSON.stringify(result[0].signature));
+    })
+  },
+
 
 }   

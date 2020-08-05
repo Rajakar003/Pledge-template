@@ -36,6 +36,10 @@ export class MyserviceService {
      console.log('formData',formData);
      return this.http.post<any>(`${this.apiBaseUrl}/photo`, formData)
    }
+   signaturestring(formData){
+    console.log('formData',formData);
+    return this.http.post<any>(`${this.apiBaseUrl}/signaturestring`, formData)
+  }
 
   fetchCountUsers():Observable<any>{
     return this.http.get(`${this.apiBaseUrl}/CountUsers`)

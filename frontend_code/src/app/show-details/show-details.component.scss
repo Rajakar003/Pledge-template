@@ -6,6 +6,8 @@
     // min-height: 100vh;
     padding-top: 40px;
     flex-direction: column;
+    position: relative;
+    z-index: 9;
     .pledge_btn{
         width: auto;
         height: 50px;
@@ -52,8 +54,11 @@
                     margin-bottom: 20px;
                 }
                 P{
+                    font-size: 13px;
+                    line-height: 16px;
+                    text-align: justify;
                     &+ p{
-                        margin-top: 20px;
+                        margin-top: 10px;
                     }
                 }
             }

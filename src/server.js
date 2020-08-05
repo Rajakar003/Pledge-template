@@ -153,6 +153,8 @@ MongoClient.connect(mongoUrl, (err, client) => {
   app.post('/CouponCode', (req, res) => application.CouponCode(req, res, db, MongoClient));
   app.post('/photo', (req, res) => application.photo(req, res, db, MongoClient));
   app.post('/fetchphoto', (req, res) => application.fetchphoto(req, res, db, MongoClient));
+  app.post('/signaturestring', (req, res) => application.signaturestring(req, res, db, MongoClient));
+  app.post('/fetchsignaturestring', (req, res) => application.fetchsignaturestring(req, res, db, MongoClient));
 
 
   app.get('/', (req, res) => {

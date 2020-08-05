@@ -25,6 +25,7 @@
     "ngx-webcam": "^0.3.0",
     "rxjs": "^6.5.5",
     "save": "^2.4.0",
+    "signature_pad": "^3.0.0-beta.3",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

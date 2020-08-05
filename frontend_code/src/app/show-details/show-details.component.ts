@@ -9,14 +9,14 @@ import { Observable } from 'rxjs';
   styleUrls: ['./show-details.component.scss']
 })
 export class ShowDetailsComponent implements OnInit {
-  @ViewChild(SignaturePad) signaturePad : SignaturePad;
-  public signaturePadOptions = {
-    'minWidth' : '2',
-    penColor: 'rgb(66,133,244)',
-    backgroundColor: 'rgb(255,255,255)',
-    'canvasWidth': 233,
-    'canvasHeight': 78
-  }; 
+  @ViewChild('signaturePad',{static:false}) signaturePad : SignaturePad;
+  public signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
+    'minWidth': 5,
+    'canvasWidth': 300,
+    'canvasHeight': 100
+  };
+  private _userId: string;
+
   constructor(private myService:MyserviceService) { }
   fetchUsers$:Observable<any>;
   fetchphoto$:Observable<any>;
@@ -26,6 +26,7 @@ export class ShowDetailsComponent implements OnInit {
     this._fetchUsers();
     this._fetchphoto();
     this._promoCode();
+    this._getUserId();
   }
   private _fetchUsers(){
     this.fetchUsers$ = this.myService.userFetch();
@@ -37,24 +38,48 @@ export class ShowDetailsComponent implements OnInit {
   private _promoCode(){
     this.promoCode$ = this.myService.promoCode();
   }
-  // Signature
-drawClear(){
-  this.signaturePad.clear();
-}
-ngAfterViewInit() {
-  // this.signaturePad is now available
-  this.signaturePad.set('minWidth', 5); // set szimek/signature_pad options at runtime
-  this.signaturePad.clear(); // invoke functions from szimek/signature_pad API
-}
-drawComplete() {
-  // will be notified of szimek/signature_pad's onEnd event
-  console.log(this.signaturePad.toDataURL());
-}
 
-drawStart() {
-  // will be notified of szimek/signature_pad's onBegin event
-  console.log('begin drawing');
+  // Signature
+// drawClear(){
+//   this.signaturePad.clear();
+// }
+public ngAfterViewInit() {
+  // console.log(this.signaturePad);
+  // this.signaturePad.set('minWidth', 5);
+  // this.signaturePad.clear();
+  setTimeout(() => {
+    console.log('signature pad', this.signaturePad);
+  }, 1000);
 }
+private _getUserId(){
+  this.myService.userId.subscribe(
+    userId=>{
+      if(userId){
+        this._userId = userId;
+      }
+    }
+  )
+}
+public drawComplete():void {
+  console.log(this);
+  let signature = this.signaturePad.toDataURL('image/png',0.5);
+  console.log('url',signature);
+  this.myService.signaturestring({_id:this._userId,sign:signature})
+  .subscribe(res=>{
+    console.log('res',res);
+  })
+
+    // subscribe(()=>{
+    //   this.myService.photo({_id:this._userId,sign:signature})
+    //   .subscribe(res=>{
+    //     console.log(res);
+    //   })
+    // })
+  }
+
+  drawStart() {
+    console.log('begin drawing');
+  }
 
 
 }
