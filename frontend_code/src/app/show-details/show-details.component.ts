@@ -76,6 +76,12 @@ public drawComplete():void {
     //   })
     // })
   }
+  dataSend(){
+    this.myService.pledgePDF({_id:this._userId})
+    .subscribe(res=>{
+      console.log('res',res);
+    })
+  }
 
   drawStart() {
     console.log('begin drawing');

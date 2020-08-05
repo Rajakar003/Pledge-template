@@ -40,6 +40,10 @@ export class MyserviceService {
     console.log('formData',formData);
     return this.http.post<any>(`${this.apiBaseUrl}/signaturestring`, formData)
   }
+  pledgePDF(formData){
+    console.log('formData',formData);
+    return this.http.post<any>(`${this.apiBaseUrl}/pledgePDF`, formData)
+  }
 
   fetchCountUsers():Observable<any>{
     return this.http.get(`${this.apiBaseUrl}/CountUsers`)
@@ -53,6 +57,7 @@ export class MyserviceService {
   promoCode():Observable<any>{
     return this.http.get(`${this.apiBaseUrl}/CouponCode`)
   }
+ 
 
 
 
