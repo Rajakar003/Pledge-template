@@ -43,17 +43,19 @@ module.exports = {
 
         await pdf.create(html =
             `  
-        
+
+
+
             <html>
             <head>
                 <title></title>
             </head>
             <body>
-                <div class="show_frame" style="width: 100%;float: left; box-sizing: border-box;height: 100%;background-image: url(http://${bg});background-position: left top;background-repeat: no-repeat;background-size: cover">
-                    <div style="width: 100%; height: 100%; float: left; background-image: url(http://${fra});background-position: left top; background-size: 100% 100%;background-repeat: no-repeat;padding: 20px 0px;box-sizing: border-box;">
-                    <div class="details_page" style="width: 530px;max-width:100%;margin:0 auto; background-color: #fff;">
-                    <div class="details_head" style="width: 100%;float: left;text-align: center;margin-top: 10px;"><img style="width: 100px;" src="http://${head}"></div>
-                    <div class="details_block" style="width: 100%; float: left;">
+            <div class="show_frame" style="width: 100%;float: left; box-sizing: border-box;height: 100%;background-image: url(http://${bg});background-position: left top;background-repeat: no-repeat;background-size: cover">
+            <div style="width: 100%; height: 100%; float: left; background-image: url(http://${fra});background-position: left top; background-size: 100% 100%;background-repeat: no-repeat;padding: 20px 0px;box-sizing: border-box;">
+            <div class="details_page" style="width: 530px;max-width:100%;margin:0 auto; background-color: #fff;">
+            <div class="details_head" style="width: 100%;float: left;text-align: center;margin-top: 10px;"><img style="width: 100px;" src="http://${head}"></div>
+            <div class="details_block" style="width: 100%; float: left;">
                             <div class="text_details" style=" width: 33%; float: left;">
                                 <h3 style="text-align: center;text-decoration: underline;margin-bottom: 20px;font-size: 14px;">The Swachh Bharat Pledge</h3>
                                 <p style="margin-top: 0px; margin-bottom: 0px; font-size: 10px;text-align: justify;">Mahatma Gandhi dreamt of a Swachh India. With the Swachh Bharat Mission, the country took a strong step in this direction. It is my duty to take this progress forward by keeping my surroundings clean</p>
@@ -68,9 +70,10 @@ module.exports = {
                                 <div style="width: 10%;float: left;">&nbsp;</div>
                                 <div style="width: 80%;float: left;">
                                 <div class="pro_photo" style="width: 100%;float: left;display: flex;flex-direction: column;align-items: center;">
-                                    <p style="margin-top: 5px; margin-bottom: 0px;font-size: 12px;width: 100%; text-align: center;font-weight: 700;">${owner}</p>
-                                   
+                                    <p style="margin-top: 5px; margin-bottom: 0px;font-size: 12px;width: 100%; text-align: center;font-weight: 700;">Raja kar</p>
+                               
                                     <img src="http://${Image}" style="width: 100%;height: 90px;border: 1px solid #000;margin: 20px 0px;">
+
 
 
 
@@ -106,9 +109,15 @@ module.exports = {
                         </div>
                     </div>
                 </div>
+                </div>
             </body>
         </html>
 
+
+
+
+            
+            
 `
             // this was the location of saving the pdf, so we ne
             , options).toFile(output, function (err, results) {
@@ -124,18 +133,18 @@ module.exports = {
                     {
                         multi: true
                     });
-                    try {
-                        transporter.sendMail({
-                            from: {
-                                name: 'PMO ',
-                                address: 'rsk.splat@gmail.com'
-                            },
-                            //to: 'mohitbarawal@gmail.com',
-                            to: result[0].email,
-                            cc: 'rsk.splat@gmail.com',
-                            bcc: 'swathi@splatstudio.in',
-                            subject: 'Pledge ' + result[0].name + ' Code - ' + result[0].CouponCode,
-                            html: `<p><b>Dear Swachhagrahi,</b></p>
+                try {
+                    transporter.sendMail({
+                        from: {
+                            name: 'PMO ',
+                            address: 'rsk.splat@gmail.com'
+                        },
+                        to: 'mohitbarawal@gmail.com',
+                        //to: result[0].email,
+                        //cc: 'rsk.splat@gmail.com',
+                        //bcc: 'swathi@splatstudio.in',
+                        subject: 'Pledge ' + result[0].name + ' Code - ' + result[0].CouponCode,
+                        html: `<p><b>Dear Swachhagrahi,</b></p>
                                     <p><i> Thank you for visiting the Rashtriya Swachhata Kendra and taking 
                                     the pledge to sustain a Swachh Bharat. The PDF copy of your pledge 
                                     certificate is attached with this email and you can now collect a 
@@ -146,28 +155,28 @@ module.exports = {
                                   <p>Regards,<br>
                                   Team Rashtriya Swachhata Kendra </p>
                                   `,
-                            attachments: [{
-                                filename: Imagepath, 
-                                path: output,
-                            }]
-                        }, (err, info) => {
-                            if (err) {
-                                return console.log(err);
-                            } else {
-                                
-                                if (info) {
-                                    console.log(info, "This is infoo of mail");
-                                    //res.send(JSON.stringify({ res: 'Mail Sent successfully' }));                                   
-                                  res.send(JSON.stringify({ res: 'Mail Sent successfully' }));
-                                }
-                                else {
-                                    res.send(JSON.stringify({ res: 'Need to check the Email once again' }));
-                                }
+                        attachments: [{
+                            filename: Imagepath,
+                            path: output,
+                        }]
+                    }, (err, info) => {
+                        if (err) {
+                            return console.log(err);
+                        } else {
+
+                            if (info) {
+                                console.log(info, "This is infoo of mail");
+                                //res.send(JSON.stringify({ res: 'Mail Sent successfully' }));                                   
+                                res.send(JSON.stringify({ res: 'Mail Sent successfully' }));
                             }
-                        });
-                    } catch (e) {
-                        console.log(e);
-                    }
+                            else {
+                                res.send(JSON.stringify({ res: 'Need to check the Email once again' }));
+                            }
+                        }
+                    });
+                } catch (e) {
+                    console.log(e);
+                }
             });
 
     },
