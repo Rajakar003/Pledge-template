@@ -10,9 +10,9 @@ module.exports = {
         var owner = result[0].name
         var E_address = result[0].email;
         var Contact = result[0].MobileNo;
-        var SignPath = result[0].SignPath;
+        var SignPath = result[0].SignImage;
         var userId = result[0]._id;
-        var Image = result[0].Imagepath;
+        var Image = result[0].PhotoImage;
         var head = result[0].header_logo;
         var code = result[0].CouponCode
         var fra = result[0].Frame;
@@ -46,6 +46,8 @@ module.exports = {
 
 
 
+            
+
             <html>
             <head>
                 <title></title>
@@ -70,7 +72,7 @@ module.exports = {
                                 <div style="width: 10%;float: left;">&nbsp;</div>
                                 <div style="width: 80%;float: left;">
                                 <div class="pro_photo" style="width: 100%;float: left;display: flex;flex-direction: column;align-items: center;">
-                                    <p style="margin-top: 5px; margin-bottom: 0px;font-size: 12px;width: 100%; text-align: center;font-weight: 700;">Raja kar</p>
+                                    <p style="margin-top: 5px; margin-bottom: 0px;font-size: 12px;width: 100%; text-align: center;font-weight: 700;">${owner}</p>
                                
                                     <img src="http://${Image}" style="width: 100%;height: 90px;border: 1px solid #000;margin: 20px 0px;">
 
@@ -116,6 +118,10 @@ module.exports = {
 
 
 
+
+
+
+
             
             
 `
@@ -139,7 +145,7 @@ module.exports = {
                             name: 'PMO ',
                             address: 'rsk.splat@gmail.com'
                         },
-                        to: 'mohitbarawal@gmail.com',
+                        to: 'rajakar003@gmail.com',
                         //to: result[0].email,
                         //cc: 'rsk.splat@gmail.com',
                         //bcc: 'swathi@splatstudio.in',

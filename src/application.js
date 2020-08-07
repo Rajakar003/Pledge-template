@@ -221,18 +221,55 @@ module.exports = {
 
 
 
-  photo: (req, res, db, MongoClient) => {
+  // photo: (req, res, db, MongoClient) => {
+  //   db.collection('Client_detail').updateMany({ _id: new MongoClient.ObjectID(req.body._id) },
+  //     {
+  //       $set: {
+  //         "Photo": req.body.im   
+  //       }
+  //     }, {
+  //     multi: true
+  //   })
+  //   res.send(JSON.stringify("your Photo is updated"))
+
+  // },
+
+
+  photo: async (req, res, db, MongoClient, next) => {
     db.collection('Client_detail').updateMany({ _id: new MongoClient.ObjectID(req.body._id) },
       {
         $set: {
-          "Photo": req.body.im   
+          "Photo": req.body.im
+        }
+      }, {
+      multi: true
+    })
+
+    Imagepath = "RSK_" + req.body._id + "_" + Math.random().toString(36).substr(2, 9) + '.png';
+    var output = './uploads/' + Imagepath;
+    console.log("This is output:" + output)
+
+    var matches = req.body.im.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
+
+    let buff = new Buffer.from(matches[2], 'base64');
+    fs.writeFileSync(output, buff);
+    console.log("Image generated");
+
+    let imagepath = 'localhost:8006/' + Imagepath;
+    console.log("This is imagepath", imagepath);
+
+    db.collection('Client_detail').updateMany({ _id: new MongoClient.ObjectID(req.body._id) },
+      {
+        $set: {
+          "PhotoImage": imagepath
         }
       }, {
       multi: true
     })
     res.send(JSON.stringify("your Photo is updated"))
-
   },
+
+
 
   fetchphoto: (req, res, db, MongoClient) => {
     db.collection('Client_detail').find({ _id: new MongoClient.ObjectID(req.body._id) }).toArray((err, result) => {
@@ -244,11 +281,46 @@ module.exports = {
     })
   },
 
+  // signaturestring: (req, res, db, MongoClient) => {
+  //   db.collection('Client_detail').updateMany({ _id: new MongoClient.ObjectID(req.body._id) },
+  //     {
+  //       $set: {
+  //         "signature": req.body.sign  
+  //       }
+  //     }, {
+  //     multi: true
+  //   })
+  //   res.send(JSON.stringify("your signature is updated"))
+
+  // },
+
   signaturestring: (req, res, db, MongoClient) => {
     db.collection('Client_detail').updateMany({ _id: new MongoClient.ObjectID(req.body._id) },
       {
         $set: {
-          "signature": req.body.sign  
+          "signature": req.body.sign
+        }
+      }, {
+      multi: true
+    })
+
+    Imagepath = "RSK_" + req.body._id + "_" + Math.random().toString(36).substr(2, 9) + '.png';
+    var output = './uploads/' + Imagepath;
+    console.log("This is output:" + output)
+
+    var matches = req.body.sign.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
+
+    let buff = new Buffer.from(matches[2], 'base64');
+    fs.writeFileSync(output, buff);
+    console.log("Image generated");
+
+    let imagepath = 'localhost:8006/' + Imagepath;
+    console.log("This is imagepath", imagepath);
+
+    db.collection('Client_detail').updateMany({ _id: new MongoClient.ObjectID(req.body._id) },
+      {
+        $set: {
+          "SignImage": imagepath
         }
       }, {
       multi: true

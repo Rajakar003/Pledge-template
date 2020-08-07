@@ -21,6 +21,7 @@ export class RegistrationComponent implements OnInit {
     console.log(form.value);
     this.myService.signUp(form.value)
     this.router.navigateByUrl('camera');
+    // this.router.navigateByUrl('capturePop');
   }
   userModel = new Signup('','','')
 
