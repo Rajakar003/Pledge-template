@@ -17,7 +17,7 @@
     "https": "^1.0.0",
     "mongodb": "^3.5.9",
     "multer": "^1.4.2",
-    "nodemailer": "^6.4.10",
+    "nodemailer": "^6.4.16",
     "signature_pad": "^3.0.0-beta.3"
   }
 }
